@@ -1,0 +1,19 @@
+input[type="file"] {
+    display: none;
+}
+
+.uploadImageButton {
+    background-image: url('../../../public/assets/upload_icon.svg');
+    background-repeat: no-repeat;
+    background-position: 3% 50%;
+    background-origin: content-box;
+    margin-top: 5px;
+    display: inline-block;
+    width: 100%;
+    padding: 10px 5px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+}

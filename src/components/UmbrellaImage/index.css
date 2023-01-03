@@ -1,0 +1,15 @@
+.umbrellaImage {
+    width: 55%;
+    min-width: 200px;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.uploadedImage {
+    width: 50px;
+    max-height: 50px;
+    position: absolute;
+    top: 69%;
+    left: 25%;
+}
