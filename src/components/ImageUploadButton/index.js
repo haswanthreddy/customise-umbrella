@@ -1,17 +1,23 @@
-import React, { useState } from 'react';
+import '../../index.css';
+import './index.css'
 
 
-const ImageUploadButton = () => {
-    const [image, setImage] = useState();
-
+const ImageUploadButton = ({ onChange, color }) => {
     const handleImageUpload = (event) => {
+        onChange(URL.createObjectURL(event.target.files[0]))
+    }
 
+    let classNames = 'uploadImageButton'
+
+    if ((typeof color) === 'string') {
+        classNames += (' ' + color + 'DarkBackground')
     }
 
     return (
-        <div>
-            <input type="file" onChange={handleImageUpload}/>
-        </div>
+        <label className={classNames}>
+            UPLOAD LOGO
+            <input type="file" onChange={handleImageUpload} accept="image/png,image/jpeg"/>
+        </label>
     )
 }
 
