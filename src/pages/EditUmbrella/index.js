@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import PageContainer from '../../components/PageContainer';
 import UmbrellaImage from '../../components/UmbrellaImage';
 import SelectColorButton from '../../components/SelectColorButton';
 import { COLOR_NAMES } from '../../constants';
 import ImageUploadButton from '../../components/ImageUploadButton';
+import Loader from '../../components/Loader';
 import '../../index.css'
 import './index.css'
 
@@ -17,6 +18,11 @@ import './index.css'
 const EditUmbrella = () => {
     const [color, setColor] = useState(COLOR_NAMES.SKY_BLUE);
     const [uploadedImage, setUploadedImage] = useState('');
+    const [loader, setLoader] = useState(true);
+
+    useEffect(()=>{
+        setTimeout(()=>setLoader(false),800)
+    },[])
 
     const handleColorChange = (selectedColor) => {
         setColor(selectedColor)
@@ -40,13 +46,10 @@ const EditUmbrella = () => {
 
     return (
         <>
-            { /** Main div - the flex container holding image and customization controls .i.e., upload 
-                    * image button, select color button, titles and description*/
-            }
             <PageContainer backgroundColor={color}>
-                { /** Image container that has umbrella's image*/}
-                <UmbrellaImage image={color} className='subContainer' uploadedImage={uploadedImage} />
-                { /** Customization controls container that contains color buttons and upload photo button*/}
+                {
+                    loader ? <Loader/> : <UmbrellaImage image={color} className='subContainer' uploadedImage={uploadedImage} />
+                }
                 <div className='subContainer'>
                     <div>
                         <h1 className='pageTitle'>Custom Umbrella</h1>

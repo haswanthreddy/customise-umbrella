@@ -1,0 +1,16 @@
+@keyframes rotating {
+    from{
+        -webkit-transform: rotate(0deg);
+    }
+    to{
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+.rotating {
+    animation: rotating 3.5s linear infinite;
+}
+
+.loader {
+    width: 100px;
+}
