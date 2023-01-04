@@ -8,8 +8,8 @@
 
 .uploadedImage {
     width: 50px;
-    max-height: 50px;
+    max-height: 40px;
     position: absolute;
-    top: 69%;
+    top: 67%;
     left: 25%;
 }
